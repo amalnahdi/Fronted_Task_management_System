@@ -1,0 +1,58 @@
+<div class="container">
+
+    <h1>Home aasignment </h1>
+
+    
+
+
+
+    <a href="#" routerLink="/task/create/" class="btn btn-success">Create New Task </a>
+
+      
+
+    <table class="table table-striped">
+
+        <thead>
+
+              <tr>
+
+                <th>ID</th>
+
+                <th>Title</th>
+
+                <th>description</th>
+
+
+                <th width="250px">Action</th>
+
+              </tr>
+
+        </thead>
+
+        <tbody>
+
+              <tr *ngFor="let task of tasks">
+
+                <td>{{ task.id }}</td>
+
+                <td>{{ task.title }}</td>
+
+                <td>{{ task.description }}</td>
+
+                <td>
+
+                  <a href="#" [routerLink]="['/task/', task.id, 'view']" class="btn btn-info">View</a>
+
+                  <a href="#" [routerLink]="['/task/', task.id, 'edit']" class="btn btn-primary">Edit</a>
+
+                  <button type="button" (click)="deleteTask(task.id)" class="btn btn-danger">Delete</button>
+
+                </td>
+
+              </tr>
+
+        </tbody>
+
+    </table>
+
+ </div>
